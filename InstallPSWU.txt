@@ -2,4 +2,4 @@ Install-Module -Name PSWindowsUpdate -Force
 
 Get-WUList -MicrosoftUpdate
 
-#Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot -Verbose
+Write-Host "Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot -Verbose"
