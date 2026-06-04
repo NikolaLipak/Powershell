@@ -1,0 +1,17 @@
+function Set-WUServicing {
+    $rootPath = "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\"
+    $regPath = "HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\Servicing"
+    $regName = "RepairContentServerSource"
+    $regValue = "2"
+    
+    if (!(Test-Path -Path $regPath)) {
+        New-ItemProperty -Path $rootPath -Name "Servicing"
+    }
+    Set-ItemProperty -Path $regPath -Name $regName -Type DWORD -Value $regValue -Force
+}
+
+Try { 
+    Set-WUServicing
+    } Catch {
+    Write-Error -Message "ERROR: failed to set registry RepairContentServerSource value to 2."
+}

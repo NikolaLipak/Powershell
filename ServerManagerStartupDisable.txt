@@ -1,0 +1,2 @@
+New-Item -Path "HKLM:\Software\Microsoft\ServerManager"
+New-ItemProperty -Path "HKLM:\Software\Microsoft\ServerManager" -Name DoNotOpenServerManagerAtLogon -PropertyType DWord -Value 1 -Force

@@ -1,0 +1,4 @@
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+Install-Script -Name winget-install -NoPathUpdate -Force
+$script=(Get-InstalledScript 'winget-install').installedlocation+'\winget-install.ps1'
+&$script
